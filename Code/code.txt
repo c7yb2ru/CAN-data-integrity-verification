@@ -1,1 +1,40 @@
-code file
+# 차량 IoT 시스템으로 경고 메시지를 출력하는 함수
+def send_warning_to_vehicle_iot(warning_message):
+    """
+    차량 IoT 시스템으로 경고 메시지를 전송하는 함수.
+    
+    :param warning_message: 전송할 경고 메시지
+    """
+    # 실제 IoT 시스템으로 메시지를 전송하는 로직
+    # 예: API 호출, MQTT 메시지 발행, CAN 메시지 전송 등
+    print(f"[차량 IoT 경고]: {warning_message}")
+
+# 네트워크 무결성 검사 함수
+def check_network_integrity(network_data):
+    """
+    네트워크 무결성을 검증하는 함수.
+    
+    :param network_data: 검증할 네트워크 데이터
+    """
+    try:
+        # 무결성 검사 로직 (예: 데이터가 손상되었는지, 중요한 정보가 누락되었는지 확인)
+        if network_data is None:
+            raise ValueError("네트워크 데이터가 없습니다.")
+        if not network_data.get("status") == "OK":
+            raise ValueError("네트워크 상태가 양호하지 않습니다.")
+        if network_data.get("signal_strength", 0) < 50:  # 신호 강도가 50 미만이면 경고
+            raise ValueError("네트워크 신호 강도가 낮습니다.")
+        
+        print("네트워크 무결성 검증 완료: 문제가 없습니다.")
+    
+    except ValueError as e:
+        # 경고가 필요한 경우 차량 IoT 시스템으로 경고 메시지 전송
+        send_warning_to_vehicle_iot(str(e))
+
+# 테스트 데이터
+network_status = {
+    "status": "OK",
+    "signal_strength": 45  # 50 미만이므로 경고
+}
+
+check_network_integrity(network_status)
