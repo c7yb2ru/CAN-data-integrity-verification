@@ -3,7 +3,7 @@ dae-kyun Kim
 
 jun-seok Choi
 
-jeong-pil Yoon 
+jeong-pil Yun
 
 gi-won Song 
 
