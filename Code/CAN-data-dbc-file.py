@@ -6,7 +6,7 @@ db = cantools.db.Database()
 
 signal_1 = cantools.db.Signal(
     name='singanl1',
-    start=8,    #시작 비트 위치
+    start=0,    #시작 비트 위치
     length=8,   #1바이트
     byte_order='little_endian',
     is_signed=False #부호 없는 값
