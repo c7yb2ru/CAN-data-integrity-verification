@@ -8,6 +8,13 @@ jeong-pil Yun
 gi-won Song 
 
 hyeon-seong Hwang
+# Linux Simulator Reference
+- https://github.com/zombieCraig/ICSim
+- https://github.com/schutzwerk/CANalyzat0r
+
+# dbc Simulator
+-  CAN dbcfile integrity-verification Algorithms
+
 # ECU-data-integrity-verification X 
 # Change-> CAN-data-integrity-verification
 
